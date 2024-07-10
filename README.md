@@ -1,6 +1,7 @@
 # SCOD: From Heuristics to Theory (ECCV 2024) 
 
-This repository contains research code for the research paper: **SCOD: From Heuristics to Theory** by V.Franc, J.Paplham and D.Prusa.
+This repository contains research code for the research paper: **SCOD: From Heuristics to Theory** by V.Franc, J.Paplham 
+and D.Prusa published at ECCV 2024.
 
 The code is organized into three separate repositories, each serving a distinct task necessary to reproduce the reported results.
 
