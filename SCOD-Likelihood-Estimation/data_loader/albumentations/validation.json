@@ -1,0 +1,47 @@
+{
+    "__version__": "0.0.1",
+    "transform": {
+        "__class_fullname__": "albumentations.core.composition.Compose",
+        "p": 1.0,
+        "transforms": [
+            {
+                "__class_fullname__": "albumentations.augmentations.geometric.resize.SmallestMaxSize",
+                "always_apply": true,
+                "p": 0.0,
+                "max_size": 256
+            },
+            {
+                "__class_fullname__": "albumentations.augmentations.crops.transforms.CenterCrop",
+                "always_apply": true,
+                "p": 0.0,
+                "height": 224,
+                "width": 224
+            },
+            {
+                "__class_fullname__": "albumentations.augmentations.transforms.Normalize",
+                "always_apply": true,
+                "p": 0.0,
+                "mean": [
+                    0.485,
+                    0.456,
+                    0.406
+                ],
+                "std": [
+                    0.229,
+                    0.224,
+                    0.225
+                ],
+                "max_pixel_value": 255
+            },
+            {
+                "__class_fullname__": "albumentations.pytorch.transforms.ToTensorV2",
+                "always_apply": true,
+                "p": 1.0,
+                "transpose_mask": true
+            }
+        ],
+        "bbox_params": null,
+        "keypoint_params": null,
+        "additional_targets": {}
+    }
+}

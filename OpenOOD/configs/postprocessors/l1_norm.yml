@@ -1,0 +1,4 @@
+postprocessor:
+  name: l1_norm
+  APS_mode: False
+  postprocessor_args:

@@ -1,0 +1,70 @@
+{
+    "name": "Cifar100_vs_Mix_Places365_Locked_Fold_2",
+    "n_gpu": 1,
+    "arch": {
+        "type": "Cifar100Resnet18",
+        "args": {
+            "method": 2,
+            "fold": 2
+        }
+    },
+    "data_loader": {
+        "type": "JSONDataLoader",
+        "args": {
+            "data_dir": "/mnt/personal/anonymized_username/bulk_data/cifar100_vs_places365_mixture/",
+            "batch_size": 20,
+            "shuffle": true,
+            "stratified": true,
+            "num_workers": 16,
+            "folders": [
+                0, 1, 2, 3, 4, 5, 6, 7
+            ],
+            "transform_path": "data_loader/albumentations/training_cifar100.json",
+            "load_images_to_memory": false
+        }
+    },
+    "valid_data_loader": {
+        "type": "JSONDataLoader",
+        "args": {
+            "data_dir": "/mnt/personal/anonymized_username/bulk_data/cifar100_vs_places365_mixture/",
+            "batch_size": 20,
+            "shuffle": false,
+            "stratified": false,
+            "num_workers": 16,
+            "folders": [
+                8, 9
+            ],
+            "transform_path": "data_loader/albumentations/validation_cifar100.json",
+            "load_images_to_memory": false
+        }
+    },
+    "optimizer": {
+        "type": "Adam",
+        "args": {
+            "lr": 0.003,
+            "weight_decay": 0,
+            "amsgrad": true
+        }
+    },
+    "loss": "bce_loss",
+    "metrics": [
+        "accuracy"
+    ],
+    "lr_scheduler": {
+        "type": "StepLR",
+        "args": {
+            "step_size": 50,
+            "gamma": 0.1
+        }
+    },
+    "trainer": {
+        "epochs": 200,
+        "len_epoch": 1000,
+        "save_dir": "saved/",
+        "save_period": 1000,
+        "verbosity": 2,
+        "monitor": "min val_loss",
+        "early_stop": 100,
+        "tensorboard": false
+    }
+}

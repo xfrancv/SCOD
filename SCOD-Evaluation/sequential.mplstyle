@@ -1,0 +1,61 @@
+### FIGURE
+figure.facecolor: white
+figure.dpi: 300
+figure.titlesize: 16
+figure.titleweight: bold
+figure.figsize: 3.5, 2.625
+
+### PATCHES
+patch.facecolor: 0072B2
+
+### LEGEND
+legend.fontsize: 10
+
+### TICKS
+### X-TICKS
+xtick.direction : in
+xtick.major.size : 3
+xtick.major.width : 0.5
+xtick.minor.size : 1.5
+xtick.minor.width : 0.5
+xtick.minor.visible : True
+xtick.top : True
+### Y-TICKS
+ytick.direction : in
+ytick.major.size : 3
+ytick.major.width : 0.5
+ytick.minor.size : 1.5
+ytick.minor.width : 0.5
+ytick.minor.visible : True
+ytick.right : True
+
+### FONTS
+text.usetex : True
+text.latex.preamble : \usepackage{amsmath} \usepackage{amssymb} \usepackage{pifont}
+font.family: lmodern
+font.size: 10
+
+
+### AXES
+axes.grid: False
+axes.facecolor: white
+axes.titlesize: 12
+axes.titleweight: bold
+axes.labelsize: 10
+axes.labelweight: bold
+axes.spines.top: True
+axes.spines.right: True
+# the color cycle was chosen as a compromise between two criteria: 1) clarity for regular vision, 2) clarity for colorblindness
+# axes.prop_cycle: cycler('color', ['882E72', '1965B0', '7BAFDE', '4EB265', 'F7F056', 'F1932D', 'DC050C', '72190E', '42150A', '000000'])
+# the color cycle was chosen as a compromise between two criteria: 1) clarity for regular vision, 2) clarity for colorblindness
+axes.prop_cycle: cycler('color', ['EE7733', '0077BB', '33BBEE', 'EE3377', 'CC3311', '009988', 'BBBBBB'])
+
+### LINES
+axes.linewidth : 0.5
+grid.linewidth : 0.5
+lines.linewidth : 1.
+
+### LEGEND
+legend.loc: best
+legend.fancybox: True
+legend.frameon : True

@@ -1,0 +1,79 @@
+{
+    "__version__": "0.0.1",
+    "transform": {
+        "__class_fullname__": "albumentations.core.composition.Compose",
+        "p": 1.0,
+        "transforms": [
+            {
+                "__class_fullname__": "albumentations.augmentations.transforms.ColorJitter",
+                "p": 1.0,
+                "brightness": [
+                    0.8,
+                    1.2
+                ],
+                "contrast": [
+                    0.8,
+                    1.2
+                ],
+                "saturation": [
+                    0.8,
+                    1.2
+                ],
+                "hue": [
+                    -0.03,
+                    0.03
+                ]
+            },
+            {
+                "__class_fullname__": "albumentations.augmentations.geometric.resize.SmallestMaxSize",
+                "always_apply": true,
+                "p": 0.0,
+                "max_size": 32
+            },
+            {
+                "__class_fullname__": "albumentations.augmentations.transforms.HorizontalFlip",
+                "always_apply": false,
+                "p": 0.5
+            },
+            {
+                "__class_fullname__": "albumentations.augmentations.geometric.rotate.SafeRotate",
+                "always_apply": false,
+                "p": 0.2,
+                "limit": 20
+            },
+            {
+                "__class_fullname__": "albumentations.augmentations.crops.transforms.RandomResizedCrop",
+                "always_apply": true,
+                "p": 0.0,
+                "height": 32,
+                "width": 32,
+                "scale": [0.8, 1.0]
+            },
+            {
+                "__class_fullname__": "albumentations.augmentations.transforms.Normalize",
+                "always_apply": true,
+                "p": 0.0,
+                "mean": [
+                    0.5071,
+                    0.4867,
+                    0.4408
+                ],
+                "std": [
+                    0.2675,
+                    0.2565,
+                    0.2761
+                ],
+                "max_pixel_value": 255
+            },
+            {
+                "__class_fullname__": "albumentations.pytorch.transforms.ToTensorV2",
+                "always_apply": true,
+                "p": 1.0,
+                "transpose_mask": true
+            }
+        ],
+        "bbox_params": null,
+        "keypoint_params": null,
+        "additional_targets": {}
+    }
+}
